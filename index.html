@@ -47,7 +47,7 @@
             Vibe Coding 模式將 AI 算力轉化為實質生產力，透過精確的邏輯架構與人機協作，在極短時間內交付最輕量、最具成本效益的數位解決方案。
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">預約合作</a>
+            <a class="button button-primary" href="https://www.instagram.com/vibe._syntax/" target="_blank" rel="noopener">預約合作</a>
             <a class="button button-secondary" href="#cases">查看案例</a>
           </div>
         </div>
@@ -159,7 +159,7 @@
           <div class="calc-container">
             <div class="input-wrap">
               <label for="daysRange">傳統估計工期 (Days)</label>
-              <input type="range" id="daysRange" min="7" max="90" value="30">
+              <input type="range" id="daysRange" class="analyzer-input" min="7" max="90" value="30">
               <span id="daysVal">30 Days</span>
             </div>
             <div class="result-wrap">
@@ -369,10 +369,12 @@
           <p>
             適合正在規劃網站設計、App 開發、自動化系統，或想用更高效率方式重構數位產品的團隊與個人。
           </p>
+          <p style="color: #00ff00; text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); font-weight: 500; margin-top: 16px;">
+            如需商務洽談，請直接透過 Instagram 私訊我們，或透過 Discord 聯繫。
+          </p>
         </div>
         <div class="contact-panel panel">
-          <p><strong>Email</strong><br><a href="mailto:hello@vibesyntax.com">hello@vibesyntax.com</a></p>
-          <p><strong>電話</strong><br>工作室聯絡電話</p>
+          <p><strong>Instagram</strong><br><a href="https://www.instagram.com/vibe._syntax/" target="_blank" rel="noopener" style="color: #00ff00; text-shadow: 0 0 10px rgba(0, 255, 0, 0.6); font-weight: bold; letter-spacing: 0.05em;">@vibe._syntax</a></p>
           <p><strong>據點</strong><br>Remote / Taichung (支援全球遠端協作)</p>
         </div>
       </section>
@@ -541,7 +543,7 @@
             entry.target.classList.add('active');
           }
         });
-      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+      }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
 
       document.querySelectorAll('.panel, .section-heading, .signal-strip, .tech-marquee, .contact-copy').forEach((element) => {
         element.classList.add('reveal');
