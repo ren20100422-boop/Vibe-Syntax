@@ -11,14 +11,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="matrixBg" style="position:fixed; top:0; left:0; z-index:-1; opacity:0.1; pointer-events:none;"></canvas>
-  <div class="noise" aria-hidden="true"></div>
+
   <div class="page-shell">
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Vibe Syntax 首頁">
@@ -26,71 +25,38 @@
         <span>Vibe Syntax</span>
       </a>
       <nav class="site-nav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#cases">Cases</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">關於</a>
+        <a href="#services">服務</a>
+        <a href="#cases">案例</a>
+        <a href="#contact">聯繫</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy panel">
-          <p class="eyebrow">AI-Powered Development Studio</p>
+        <div class="hero-copy">
+          <p class="eyebrow">技術工作室 · AI 驅動開發</p>
           <h1>
-            <span class="h1-brand glitch" data-text="Vibe Syntax">Vibe Syntax</span>
-            <span class="glitch" data-text="AI 驅動開發，">AI 驅動開發，</span><br>重塑性價比極限。
+            <span class="h1-brand fade-in">Vibe Syntax</span>
+            <span class="fade-in" style="animation-delay: 0.2s;">AI 驅動開發，</span><br>
+            <span class="fade-in" style="animation-delay: 0.4s;">重塑性價比。</span>
           </h1>
-          <p class="hero-subtitle">Vibe Syntax: Redefining Value through AI-Powered Development.</p>
-          <p class="hero-text">
-            Vibe Syntax 是一家專注於新世代開發流程的技術工作室。我們拋棄傳統軟體外包的冗長與高昂，利用
-            Vibe Coding 模式將 AI 算力轉化為實質生產力，透過精確的邏輯架構與人機協作，在極短時間內交付最輕量、最具成本效益的數位解決方案。
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="https://www.instagram.com/vibe._syntax/" target="_blank" rel="noopener">預約合作</a>
-            <a class="button button-secondary" href="#cases">查看案例</a>
-          </div>
         </div>
-
-        <aside class="hero-side panel">
-          <div class="terminal-head">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <p class="terminal-line"><span>&gt;</span> stack.mode = "vibe_coding"</p>
-          <p class="terminal-line"><span>&gt;</span> delivery = "lean / precise / scalable"</p>
-          <p class="terminal-line"><span>&gt;</span> output = "high signal, low waste"</p>
-          <div class="hero-metrics">
-            <article>
-              <strong>3x+</strong>
-              <p>更短開發週期</p>
-            </article>
-            <article>
-              <strong>24/7</strong>
-              <p>AI 協作迭代節奏</p>
-            </article>
-            <article>
-              <strong>Lean</strong>
-              <p>聚焦必要功能交付</p>
-            </article>
+        <aside class="hero-side">
+          <div class="manifesto-block">
+            <p class="manifesto-text">
+              Vibe Syntax 是一家專注於新世代開發流程的技術工作室。我們拋棄傳統軟體外包的冗長與高昂，利用 Vibe Coding 模式將 AI 算力轉化為實質生產力，透過精確的邏輯架構與人機協作，在極短時間內交付最輕量、最具成本效益的數位解決方案。
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://www.instagram.com/vibe._syntax/" target="_blank" rel="noopener">預約合作</a>
+              <a class="button button-secondary" href="#cases">查看案例</a>
+            </div>
           </div>
         </aside>
       </section>
 
-      <div class="system-status panel reveal">
-        <div class="status-item">
-          <span class="label">PROCESS_MODE:</span>
-          <span class="value accent">HIGH_EFFICIENCY</span>
-        </div>
-        <div class="status-item">
-          <span class="label">ERROR_RATE:</span>
-          <span class="value">0.00%</span>
-        </div>
-        <div class="status-item">
-          <span class="label">UPTIME:</span>
-          <span class="value">99.9%</span>
-        </div>
+      <div class="system-status reveal">
+        <p>運行模式：高效率 | 錯誤率：0.00% | 穩定性：99.9%</p>
       </div>
 
       <section class="signal-strip">
@@ -123,7 +89,7 @@
 
       <section class="about-section" id="about">
         <div class="section-heading">
-          <p class="eyebrow">About</p>
+          <p class="eyebrow">關於我們</p>
           <h2>我們不只編寫代碼，我們在優化價值的流動。</h2>
         </div>
         <div class="about-grid">
@@ -136,7 +102,7 @@
             </p>
           </article>
           <article class="panel manifesto-card">
-            <p class="manifesto-label">Operating Principle</p>
+            <p class="manifesto-label">核心運作原則</p>
             <ul class="manifesto-list">
               <li>減少冗餘溝通，把時間留給真正重要的決策。</li>
               <li>用最少可行結構換取最快可用成果。</li>
@@ -154,7 +120,7 @@
 
       <section class="efficiency-tool panel reveal" aria-labelledby="efficiency-title">
         <div class="tool-content">
-          <h3 id="efficiency-title">Efficiency Analyzer</h3>
+          <h3 id="efficiency-title">效率比較分析器</h3>
           <p class="tool-desc">輸入你的預計專案天數，查看 Vibe Syntax 如何壓縮流程。</p>
           <div class="calc-container">
             <div class="input-wrap">
@@ -185,7 +151,6 @@
               <h4>Next.js App Router</h4>
             </div>
             <p>採用 Server Components 優化首屏渲染，確保 Core Web Vitals 效能全拿。</p>
-            <div class="progress-mini"><div class="fill" style="width: 98%;"></div></div>
             <span class="p-val">Performance: 98%</span>
           </div>
           <div class="metric-item panel">
@@ -194,7 +159,6 @@
               <h4>FastAPI / Python</h4>
             </div>
             <p>非同步架構處理併發請求，搭配 Pydantic 進行嚴格資料校驗。</p>
-            <div class="progress-mini"><div class="fill" style="width: 92%;"></div></div>
             <span class="p-val">Efficiency: 92%</span>
           </div>
           <div class="metric-item panel">
@@ -203,7 +167,6 @@
               <h4>Automated Execution</h4>
             </div>
             <p>透過 Python 構建高可靠性的自動化邏輯，整合多方 API 與異常重試機制，實現穩定的無人值守運作。</p>
-            <div class="progress-mini"><div class="fill" style="width: 95%;"></div></div>
             <span class="p-val">Reliability: 95%</span>
           </div>
         </div>
@@ -211,59 +174,56 @@
 
       <section class="services-section" id="services">
         <div class="section-heading">
-          <p class="eyebrow">Services</p>
+          <p class="eyebrow">服務項目</p>
           <h2>以輕量交付為核心，打造真正有商業效率的數位方案。</h2>
         </div>
-        <div class="packages-grid">
-          <div class="package-card panel reveal">
-            <div class="pkg-badge">DIGITAL PRODUCT</div>
-            <h3>網站與 App 設計開發</h3>
-            <ul>
-              <li>高質感品牌與企業形象網站</li>
-              <li>跨平台 App (iOS/Android) 開發</li>
-              <li>極致載入速度與流暢 UI/UX 體驗</li>
-            </ul>
-            <p class="pkg-lead-time">交付期：依需求評估</p>
-          </div>
-          <div class="package-card panel reveal">
-            <div class="pkg-badge">SCRIPTING</div>
-            <h3>單點自動化腳本</h3>
-            <ul>
-              <li>網頁資料抓取與清洗</li>
-              <li>定期排程自動化任務</li>
-              <li>單一第三方 API 串接整合</li>
-            </ul>
-            <p class="pkg-lead-time">交付期：3-5 工作日</p>
-          </div>
-          <div class="package-card panel reveal highlight">
-            <div class="pkg-badge">SYSTEM</div>
-            <h3>全鏈路自動化系統</h3>
-            <ul>
-              <li>複雜業務邏輯模組化封裝</li>
-              <li>非同步資料庫與多端點整合</li>
-              <li>AI 分析與智能決策模組導入</li>
-            </ul>
-            <p class="pkg-lead-time">交付期：7-10 工作日</p>
-          </div>
+        <div class="packages-grid list-mode">
+          <article class="list-row reveal">
+            <div class="list-num">01</div>
+            <div class="list-content">
+              <h3>網站與 App 設計開發</h3>
+            </div>
+            <div class="list-meta">
+              <p>高質感品牌與企業形象網站，跨平台 App 開發，極致載入速度與流暢 UI/UX 體驗。以數位產品的高標美學與轉換率為核心。（交付期：依需求評估）</p>
+            </div>
+          </article>
+          <article class="list-row reveal">
+            <div class="list-num">02</div>
+            <div class="list-content">
+              <h3>單點自動化腳本</h3>
+            </div>
+            <div class="list-meta">
+              <p>網頁資料抓取與清洗，定期排程自動化任務，單一第三方 API 串接整合。解決瑣碎的重覆性人工作業。（交付期：3-5 工作日）</p>
+            </div>
+          </article>
+          <article class="list-row reveal highlight">
+            <div class="list-num">03</div>
+            <div class="list-content">
+              <h3>全鏈路自動化系統</h3>
+            </div>
+            <div class="list-meta">
+              <p>複雜業務邏輯模組化封裝，非同步資料庫與多端點整合，AI 分析與智能決策模組導入。為企業建構高吞吐無人值守後台。（交付期：7-10 工作日）</p>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="spec-section panel reveal" aria-labelledby="spec-title">
         <div class="spec-header">
-          <p class="eyebrow">Technical Specs</p>
+          <p class="eyebrow">技術規格</p>
           <h2 id="spec-title">Vibe Syntax 的開發標準。</h2>
         </div>
         <div class="spec-grid">
           <div class="spec-item">
-            <h4>Core Engine</h4>
+            <h4>核心引擎</h4>
             <p>採用非同步 Python 框架 (FastAPI)，確保在高負載數據處理下依然維持極低的延遲與高擴展性。</p>
           </div>
           <div class="spec-item">
-            <h4>Logic Calibration</h4>
+            <h4>邏輯標準化</h4>
             <p>嚴謹的邏輯單元測試，確保自動化流程在各種邊界條件下皆能穩定運行，將錯誤率降至最低。</p>
           </div>
           <div class="spec-item">
-            <h4>Performance</h4>
+            <h4>效能表現</h4>
             <p>網頁加載速度優化至 1s 內，並以 Core Web Vitals 作為體驗與工程品質基準。</p>
           </div>
         </div>
@@ -271,31 +231,46 @@
 
       <section class="process-section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Process</p>
+          <p class="eyebrow">工作流程</p>
           <h2>從想法到交付的極簡路徑。</h2>
         </div>
-        <div class="process-steps">
-          <div class="step panel">
-            <span>01</span>
-            <h4>需求同步</h4>
-            <p>快速溝通核心邏輯，鎖定必要功能與交付優先序。</p>
+        <div class="process-steps list-mode">
+          <div class="list-row reveal">
+            <div class="list-num">01</div>
+            <div class="list-content">
+              <h4>需求同步</h4>
+              <p>快速溝通核心邏輯，鎖定必要功能與交付優先序。</p>
+            </div>
+            <div class="list-meta">
+              <p class="pkg-lead-time">第一階段</p>
+            </div>
           </div>
-          <div class="step panel">
-            <span>02</span>
-            <h4>AI 協作原型</h4>
-            <p>3 天內產出可視化原型或最小可行流程，先驗證再擴充。</p>
+          <div class="list-row reveal">
+            <div class="list-num">02</div>
+            <div class="list-content">
+              <h4>AI 協作原型</h4>
+              <p>3 天內產出可視化原型或最小可行流程，先驗證再擴充。</p>
+            </div>
+            <div class="list-meta">
+              <p class="pkg-lead-time">第二階段</p>
+            </div>
           </div>
-          <div class="step panel">
-            <span>03</span>
-            <h4>精準交付</h4>
-            <p>優化、測試並完成部署，將複雜度留在系統內部而不是客戶流程裡。</p>
+          <div class="list-row reveal">
+            <div class="list-num">03</div>
+            <div class="list-content">
+              <h4>精準交付</h4>
+              <p>優化、測試並完成部署，將複雜度留在系統內部而不是客戶流程裡。</p>
+            </div>
+            <div class="list-meta">
+              <p class="pkg-lead-time">第三階段</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="results-section">
         <div class="section-heading">
-          <p class="eyebrow">Value Metrics</p>
+          <p class="eyebrow">成果數據</p>
           <h2>效率不是口號，而是每一個交付節點都可被感知的價值。</h2>
         </div>
         <div class="stats-grid">
@@ -316,34 +291,49 @@
 
       <section class="cases-section" id="cases">
         <div class="section-heading">
-          <p class="eyebrow">Selected Cases</p>
+          <p class="eyebrow">精選案例</p>
           <h2>以模組化思維與 AI 協作流程，交付更乾淨、更快、更有效率的成果。</h2>
         </div>
-        <div class="case-list">
-          <article class="case-card panel">
-            <p class="case-id">[VS-API-01]</p>
-            <h3>高併發非同步 API 系統架構</h3>
-            <p>基於 FastAPI 構建，具備即時數據處理與高吞吐能力，將原本臃腫的微服務整併為輕量極速的單體架構，大幅降低伺服器負載。</p>
-            <button class="view-detail" type="button" onclick="openCase('api01')">View Architecture</button>
+        <div class="case-list list-mode">
+          <article class="list-row reveal">
+            <div class="list-num">01</div>
+            <div class="list-content">
+              <h3>高併發非同步 API 系統架構</h3>
+              <p>基於 FastAPI 構建，具備即時數據處理與高吞吐能力，將原本臃腫的微服務整併為輕量極速的單體架構，大幅降低伺服器負載。</p>
+            </div>
+            <div class="list-meta">
+              <p class="case-id">[VS-API-01]</p>
+              <button class="view-detail" type="button" onclick="openCase('api01')">查看案例</button>
+            </div>
           </article>
-          <article class="case-card panel">
-            <p class="case-id">[VS-Auto-01]</p>
-            <h3>Python 自動化流程與 AI 代理整合實績</h3>
-            <p>串接 API、腳本與代理流程，將重複性營運工作自動化，縮短人工操作鏈路，讓決策與執行速度同步提升。</p>
-            <button class="view-detail" type="button" onclick="openCase('auto01')">View Architecture</button>
+          <article class="list-row reveal">
+            <div class="list-num">02</div>
+            <div class="list-content">
+              <h3>Python 自動化流程與 AI 代理整合實績</h3>
+              <p>串接 API、腳本與代理流程，將重複性營運工作自動化，縮短人工操作鏈路，讓決策與執行速度同步提升。</p>
+            </div>
+            <div class="list-meta">
+              <p class="case-id">[VS-Auto-01]</p>
+              <button class="view-detail" type="button" onclick="openCase('auto01')">查看案例</button>
+            </div>
           </article>
-          <article class="case-card panel">
-            <p class="case-id">[VS-WebApp-01]</p>
-            <h3>全端數位產品：高質感網站與 App</h3>
-            <p>採用 Next.js 與跨平台技術，為客戶打造極致流暢的企業級應用。兼顧視覺美學與後端擴展性，完美呈現品牌價值與核心功能。</p>
-            <button class="view-detail" type="button" onclick="openCase('webapp01')">View Architecture</button>
+          <article class="list-row reveal">
+            <div class="list-num">03</div>
+            <div class="list-content">
+              <h3>全端數位產品：高質感網站與 App</h3>
+              <p>採用 Next.js 與跨平台技術，為客戶打造極致流暢的企業級應用。兼顧視覺美學與後端擴展性，完美呈現品牌價值與核心功能。</p>
+            </div>
+            <div class="list-meta">
+              <p class="case-id">[VS-WebApp-01]</p>
+              <button class="view-detail" type="button" onclick="openCase('webapp01')">查看案例</button>
+            </div>
           </article>
         </div>
       </section>
 
       <section class="faq-section reveal">
         <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
+          <p class="eyebrow">常見問題</p>
           <h2>常見問題</h2>
         </div>
         <div class="faq-list">
@@ -364,65 +354,30 @@
 
       <section class="contact-section" id="contact">
         <div class="contact-copy">
-          <p class="eyebrow">Contact</p>
+          <p class="eyebrow">聯繫我們</p>
           <h2>如果你想用更短時間做出更有價值的產品，我們可以一起開始。</h2>
           <p>
             適合正在規劃網站設計、App 開發、自動化系統，或想用更高效率方式重構數位產品的團隊與個人。
           </p>
-          <p style="color: #00ff00; text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); font-weight: 500; margin-top: 16px;">
+          <p>
             如需商務洽談，請直接透過 Instagram 私訊我們，或透過 Discord 聯繫。
           </p>
         </div>
         <div class="contact-panel panel">
-          <p><strong>Instagram</strong><br><a href="https://www.instagram.com/vibe._syntax/" target="_blank" rel="noopener" style="color: #00ff00; text-shadow: 0 0 10px rgba(0, 255, 0, 0.6); font-weight: bold; letter-spacing: 0.05em;">@vibe._syntax</a></p>
-          <p><strong>據點</strong><br>Remote / Taichung (支援全球遠端協作)</p>
+          <p><strong>Instagram</strong><br><a href="https://www.instagram.com/vibe._syntax/" target="_blank" rel="noopener">@vibe._syntax</a></p>
+          <p><strong>操作地點</strong><br>遠端 / 台中（支援全球遠端協作）</p>
         </div>
       </section>
     </main>
   </div>
   <dialog id="caseOverlay" class="overlay">
     <div class="overlay-content panel">
-      <button class="overlay-close" type="button" onclick="closeCase()">CLOSE [X]</button>
+      <button class="overlay-close" type="button" onclick="closeCase()">關閉</button>
       <div id="caseDetailRender"></div>
     </div>
   </dialog>
   <script>
-    // 1. 矩陣代碼背景動畫
-    const canvas = document.getElementById('matrixBg');
-    const ctx = canvas.getContext('2d');
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const characters = "01VIBESYNTAX<>/[]{}#&";
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-
-    function drawMatrix() {
-      ctx.fillStyle = "rgba(5, 5, 5, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#007AFF"; // 使用品牌藍色
-      ctx.font = fontSize + "px 'IBM Plex Mono'";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = characters.charAt(Math.floor(Math.random() * characters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-    setInterval(drawMatrix, 50);
-
-    // 2. 視窗縮放時自適應 Canvas
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
 
     const caseDetails = {
       api01: {
@@ -460,23 +415,7 @@
       }
     };
 
-    function typeWriter(element, text, speed = 44) {
-      let index = 0;
-      element.innerHTML = '<span>&gt;</span> ';
-      const cursor = document.createElement('span');
-      cursor.className = 'cursor';
-      element.appendChild(cursor);
 
-      function typing() {
-        if (index < text.length) {
-          cursor.before(text.charAt(index));
-          index += 1;
-          setTimeout(typing, speed);
-        }
-      }
-
-      typing();
-    }
 
     function renderCase(detail) {
       const container = document.getElementById('caseDetailRender');
@@ -509,20 +448,11 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      const lines = document.querySelectorAll('.terminal-line');
       const daysRange = document.getElementById('daysRange');
       const daysVal = document.getElementById('daysVal');
       const vsBar = document.getElementById('vsBar');
       const saveTag = document.getElementById('saveTag');
       const overlay = document.getElementById('caseOverlay');
-
-      lines.forEach((line, index) => {
-        const originalText = line.textContent.replace('>', '').trim();
-        line.innerHTML = '';
-        setTimeout(() => {
-          typeWriter(line, originalText, 54);
-        }, index * 1100);
-      });
 
       // 1. 為列表項目自動分配延遲 (Stagger effect)
       const staggerContainers = ['.packages-grid', '.metrics-grid', '.case-list', '.stats-grid', '.process-steps', '.faq-list'];
@@ -549,30 +479,7 @@
         element.classList.add('reveal');
       });
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-      document.querySelectorAll('.panel').forEach((element) => {
-        const ref = document.createElement('div');
-        ref.className = 'ref-corner';
-        ref.textContent = 'REF_0418';
-        element.appendChild(ref);
 
-        element.addEventListener('mousemove', (e) => {
-          const rect = element.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = ((y - centerY) / centerY) * -5;
-          const rotateY = ((x - centerX) / centerX) * 5;
-          
-          element.style.setProperty('--tilt-x', `${rotateX}deg`);
-          element.style.setProperty('--tilt-y', `${rotateY}deg`);
-        });
-
-        element.addEventListener('mouseleave', () => {
-          element.style.setProperty('--tilt-x', `0deg`);
-          element.style.setProperty('--tilt-y', `0deg`);
-        });
-      });
       const updateEfficiency = () => {
         const days = Number(daysRange.value);
         const reducedDays = Math.max(3, Math.round(days * 0.3));
@@ -618,111 +525,17 @@
     });
 
     let tickingScroll = false;
-    let lastScrollY = window.scrollY;
     document.addEventListener('scroll', () => {
       if (!tickingScroll) {
         window.requestAnimationFrame(() => {
-          const scrolled = window.scrollY;
-          const scrollDiff = scrolled - lastScrollY;
-          lastScrollY = scrolled;
-          
-          document.body.style.setProperty('--scroll-y', scrolled);
-
-          // 讓跑馬燈在滾動時稍微加快，增加動態感
-          const marquee = document.querySelector('.marquee-content');
-          if (marquee) {
-            const speed = 20 - (scrolled * 0.005);
-            marquee.style.animationDuration = `${Math.max(5, speed)}s`;
-          }
-          
-          // 滾動速度傾斜 (Velocity Skew)
-          const marqueeLarge = document.querySelector('.manifesto-banner');
-          if (marqueeLarge) {
-            const skewAmount = Math.max(-8, Math.min(8, scrollDiff * 0.08));
-            marqueeLarge.style.transform = `skewY(${skewAmount}deg)`;
-            marqueeLarge.style.transition = 'transform 0.1s ease-out';
-            clearTimeout(marqueeLarge.skewTimeout);
-            marqueeLarge.skewTimeout = setTimeout(() => {
-              marqueeLarge.style.transform = `skewY(0deg)`;
-              marqueeLarge.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
-            }, 100);
-          }
-          
-          // 更新模擬延遲數據
-          const latency = document.getElementById('liveLatency');
-          if (latency) {
-            latency.textContent = `${Math.floor(Math.random() * 10) + 15}ms`;
-          }
+          document.body.style.setProperty('--scroll-y', window.scrollY);
           tickingScroll = false;
         });
         tickingScroll = true;
       }
     });
 
-    // --- Scramble Text Effect ---
-    class TextScramble {
-      constructor(el) {
-        this.el = el;
-        this.chars = '!<>-_\\\\/[]{}—=+*^?#________';
-        this.update = this.update.bind(this);
-      }
-      setText(newText) {
-        const oldText = this.el.innerText;
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise((resolve) => this.resolve = resolve);
-        this.queue = [];
-        for (let i = 0; i < length; i++) {
-          const from = oldText[i] || '';
-          const to = newText[i] || '';
-          const start = Math.floor(Math.random() * 40);
-          const end = start + Math.floor(Math.random() * 40);
-          this.queue.push({ from, to, start, end });
-        }
-        cancelAnimationFrame(this.frameRequest);
-        this.frame = 0;
-        this.update();
-        return promise;
-      }
-      update() {
-        let output = '';
-        let complete = 0;
-        for (let i = 0, n = this.queue.length; i < n; i++) {
-          let { from, to, start, end, char } = this.queue[i];
-          if (this.frame >= end) {
-            complete++;
-            output += to;
-          } else if (this.frame >= start) {
-            if (!char || Math.random() < 0.28) {
-              char = this.randomChar();
-              this.queue[i].char = char;
-            }
-            output += `<span class="dud" style="color:var(--muted)">${char}</span>`;
-          } else {
-            output += from;
-          }
-        }
-        this.el.innerHTML = output;
-        if (complete === this.queue.length) {
-          this.resolve();
-        } else {
-          this.frameRequest = requestAnimationFrame(this.update);
-          this.frame++;
-        }
-      }
-      randomChar() {
-        return this.chars[Math.floor(Math.random() * this.chars.length)];
-      }
-    }
 
-    const scrambleEls = document.querySelectorAll('.brand span, .stat-card strong, .hero-metrics strong');
-    scrambleEls.forEach(el => {
-      const fx = new TextScramble(el);
-      const text = el.innerText;
-      // Scramble on hover
-      el.addEventListener('mouseenter', () => fx.setText(text));
-      // Scramble once on load
-      setTimeout(() => fx.setText(text), Math.random() * 1000 + 500);
-    });
 
     // --- Click Ripple Effect ---
     document.addEventListener('click', (e) => {
