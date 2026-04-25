@@ -1,552 +1,119 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vibe Syntax | AI 驅動開發，重塑性價比極限。</title>
-  <meta
-    name="description"
-    content="Vibe Syntax 是專注於 AI 驅動開發流程的新世代技術工作室，以極短交付週期與高性價比方案打造輕量化數位產品。"
-  >
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  >
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VisionBay Interactive Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div id="scale-wrapper">
+        <div id="app">
+            <!-- Background Elements -->
+            <div class="bg-elements">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+                <div class="glow-orb orb-3"></div>
+                <div class="grid-overlay"></div>
+            </div>
 
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Vibe Syntax 首頁">
-        <img src="vs-logo.png" alt="Vibe Syntax logo">
-        <span>Vibe Syntax</span>
-      </a>
-      <nav class="site-nav">
-        <a href="#about">關於</a>
-        <a href="#services">服務</a>
-        <a href="#cases">案例</a>
-        <a href="#contact">聯繫</a>
-      </nav>
-    </header>
+            <!-- Home Screen (Language Selection) -->
+            <div id="home-screen" class="screen">
+                <div class="home-center-box glass-panel">
+                    <div class="logo-large">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        VisionBay<span>.ai</span>
+                    </div>
+                    <div class="lang-select-container">
+                        <button class="glass-btn lang-btn" onclick="startApp('en')">ENGLISH</button>
+                        <button class="glass-btn lang-btn" onclick="startApp('tc')">中文</button>
+                    </div>
+                </div>
+            </div>
 
-    <main id="top">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">技術工作室 · AI 驅動開發</p>
-          <h1>
-            <span class="h1-brand fade-in">Vibe Syntax</span>
-            <span class="fade-in" style="animation-delay: 0.2s;">AI 驅動開發，</span><br>
-            <span class="fade-in" style="animation-delay: 0.4s;">重塑性價比。</span>
-          </h1>
-        </div>
-        <aside class="hero-side">
-          <div class="manifesto-block">
-            <p class="manifesto-text">
-              Vibe Syntax 是一家專注於新世代開發流程的技術工作室。我們拋棄傳統軟體外包的冗長與高昂，利用 Vibe Coding 模式將 AI 算力轉化為實質生產力，透過精確的邏輯架構與人機協作，在極短時間內交付最輕量、最具成本效益的數位解決方案。
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="https://www.instagram.com/vibe._syntax/" target="_blank" rel="noopener">預約合作</a>
-              <a class="button button-secondary" href="#cases">查看案例</a>
-            </div>
-          </div>
-        </aside>
-      </section>
+            <!-- Main Dashboard Screen (Top-to-Bottom Layout for Portrait) -->
+            <div id="dashboard-screen" class="screen" style="display: none; opacity: 0; flex-direction: column;">
+                
+                <!-- Top Header -->
+                <header class="dash-header">
+                    <div class="logo-large" onclick="goHome()" style="font-size: 50px; cursor: pointer;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        VisionBay<span>.ai</span>
+                    </div>
 
-      <div class="system-status reveal">
-        <p>運行模式：高效率 | 錯誤率：0.00% | 穩定性：99.9%</p>
-      </div>
+                    <div class="header-actions">
+                        <div class="qr-section">
+                            <div class="qr-card">
+                                <img src="assets/qr-contact.png" alt="Contact" class="qr-img">
+                                <span>Contact</span>
+                            </div>
+                            <div class="qr-card">
+                                <img src="assets/qr-linkedin.png" alt="LinkedIn" class="qr-img">
+                                <span>LinkedIn</span>
+                            </div>
+                        </div>
+                        
+                        <div class="controls-stack">
+                            <button class="glass-btn btn-sm" id="btn-lang-toggle" onclick="toggleLang()">EN / 中</button>
+                            <button class="glass-btn btn-sm" onclick="goBack()" id="btn-back">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                <span id="text-back">Back</span>
+                            </button>
+                        </div>
+                    </div>
+                </header>
 
-      <section class="signal-strip">
-        <p>資料驅動架構</p>
-        <p>工作流自動化</p>
-        <p>高擴展性系統</p>
-        <p>零冗餘代碼實作</p>
-      </section>
+                <!-- 3-Tier Architecture Tabs -->
+                <nav class="architecture-tabs">
+                    <div class="stack-layer tier-app" id="nav-app_store" onclick="navigateToTier('app_store')">
+                        <div class="stack-icon">3</div>
+                        <span id="text-nav-app_store">AI App Store</span>
+                    </div>
+                    <div class="stack-layer tier-computing" id="nav-computing" onclick="navigateToTier('computing')">
+                        <div class="stack-icon">2</div>
+                        <span id="text-nav-computing">AI Computing Ops. Mgmt.</span>
+                    </div>
+                    <div class="stack-layer tier-data" id="nav-data_center" onclick="navigateToTier('data_center')">
+                        <div class="stack-icon">1</div>
+                        <span id="text-nav-data_center">AI Data Center</span>
+                    </div>
+                </nav>
 
-      <div class="tech-marquee reveal" aria-label="Technology stack marquee">
-        <div class="marquee-content">
-          <span>WEB DESIGN</span>
-          <span>APP DEVELOPMENT</span>
-          <span>PYTHON AUTOMATION</span>
-          <span>DATA PIPELINES</span>
-          <span>API INTEGRATION</span>
-          <span>CUSTOM WORKFLOWS</span>
-          <span>UI/UX ENGINEERING</span>
-          <span>WEB PERFORMANCE</span>
-          <span>WEB DESIGN</span>
-          <span>APP DEVELOPMENT</span>
-          <span>PYTHON AUTOMATION</span>
-          <span>DATA PIPELINES</span>
-          <span>API INTEGRATION</span>
-          <span>CUSTOM WORKFLOWS</span>
-          <span>UI/UX ENGINEERING</span>
-          <span>WEB PERFORMANCE</span>
+                <!-- Full Width Content Area -->
+                <main id="content-area">
+                    <!-- Dynamic views injected here -->
+                </main>
+            </div>
         </div>
-      </div>
-
-      <section class="about-section" id="about">
-        <div class="section-heading">
-          <p class="eyebrow">關於我們</p>
-          <h2>我們不只編寫代碼，我們在優化價值的流動。</h2>
-        </div>
-        <div class="about-grid">
-          <article class="panel about-card">
-            <p>
-              Vibe Syntax 專注把 AI 算力真正導入開發現場。對我們而言，AI 不是裝飾性的標籤，而是壓縮流程、加速驗證與降低交付成本的核心引擎。
-            </p>
-            <p>
-              我們以精確邏輯架構、人機協作與模組化實作方式，提供高質感的現代網站設計、跨平台 App 開發與自動化系統架構。讓產品不只具備極致的視覺體驗，也能結合自動化流程，更快推向市場。
-            </p>
-          </article>
-          <article class="panel manifesto-card">
-            <p class="manifesto-label">核心運作原則</p>
-            <ul class="manifesto-list">
-              <li>減少冗餘溝通，把時間留給真正重要的決策。</li>
-              <li>用最少可行結構換取最快可用成果。</li>
-              <li>將 AI 節省下來的成本紅利直接回饋給客戶。</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="manifesto-banner reveal">
-        <div class="marquee-large">
-          <h2>SPEED IS A FEATURE. LEAN IS THE GOAL. AI IS THE ENGINE. &nbsp;&nbsp;&nbsp;&nbsp; SPEED IS A FEATURE. LEAN IS THE GOAL. AI IS THE ENGINE.</h2>
-        </div>
-      </section>
-
-      <section class="efficiency-tool panel reveal" aria-labelledby="efficiency-title">
-        <div class="tool-content">
-          <h3 id="efficiency-title">效率比較分析器</h3>
-          <p class="tool-desc">輸入你的預計專案天數，查看 Vibe Syntax 如何壓縮流程。</p>
-          <div class="calc-container">
-            <div class="input-wrap">
-              <label for="daysRange">傳統估計工期 (Days)</label>
-              <input type="range" id="daysRange" class="analyzer-input" min="7" max="90" value="30">
-              <span id="daysVal">30 Days</span>
-            </div>
-            <div class="result-wrap">
-              <div class="res-box">
-                <p>傳統外包</p>
-                <div class="bar-bg"><div class="bar trad-bar" id="tradBar" style="width: 100%;"></div></div>
-              </div>
-              <div class="res-box">
-                <p>Vibe Syntax (AI-Driven)</p>
-                <div class="bar-bg"><div class="bar vs-bar" id="vsBar" style="width: 30%;"></div></div>
-                <span class="save-tag" id="saveTag">節省約 70% 時間</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="tech-metrics reveal">
-        <div class="metrics-grid">
-          <div class="metric-item panel">
-            <div class="metric-header">
-              <span class="icon">⚡</span>
-              <h4>Next.js App Router</h4>
-            </div>
-            <p>採用 Server Components 優化首屏渲染，確保 Core Web Vitals 效能全拿。</p>
-            <span class="p-val">Performance: 98%</span>
-          </div>
-          <div class="metric-item panel">
-            <div class="metric-header">
-              <span class="icon">🐍</span>
-              <h4>FastAPI / Python</h4>
-            </div>
-            <p>非同步架構處理併發請求，搭配 Pydantic 進行嚴格資料校驗。</p>
-            <span class="p-val">Efficiency: 92%</span>
-          </div>
-          <div class="metric-item panel">
-            <div class="metric-header">
-              <span class="icon">⚙️</span>
-              <h4>Automated Execution</h4>
-            </div>
-            <p>透過 Python 構建高可靠性的自動化邏輯，整合多方 API 與異常重試機制，實現穩定的無人值守運作。</p>
-            <span class="p-val">Reliability: 95%</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="services-section" id="services">
-        <div class="section-heading">
-          <p class="eyebrow">服務項目</p>
-          <h2>以輕量交付為核心，打造真正有商業效率的數位方案。</h2>
-        </div>
-        <div class="packages-grid list-mode">
-          <article class="list-row reveal">
-            <div class="list-num">01</div>
-            <div class="list-content">
-              <h3>網站與 App 設計開發</h3>
-            </div>
-            <div class="list-meta">
-              <p>高質感品牌與企業形象網站，跨平台 App 開發，極致載入速度與流暢 UI/UX 體驗。以數位產品的高標美學與轉換率為核心。（交付期：依需求評估）</p>
-            </div>
-          </article>
-          <article class="list-row reveal">
-            <div class="list-num">02</div>
-            <div class="list-content">
-              <h3>單點自動化腳本</h3>
-            </div>
-            <div class="list-meta">
-              <p>網頁資料抓取與清洗，定期排程自動化任務，單一第三方 API 串接整合。解決瑣碎的重覆性人工作業。（交付期：3-5 工作日）</p>
-            </div>
-          </article>
-          <article class="list-row reveal highlight">
-            <div class="list-num">03</div>
-            <div class="list-content">
-              <h3>全鏈路自動化系統</h3>
-            </div>
-            <div class="list-meta">
-              <p>複雜業務邏輯模組化封裝，非同步資料庫與多端點整合，AI 分析與智能決策模組導入。為企業建構高吞吐無人值守後台。（交付期：7-10 工作日）</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="spec-section panel reveal" aria-labelledby="spec-title">
-        <div class="spec-header">
-          <p class="eyebrow">技術規格</p>
-          <h2 id="spec-title">Vibe Syntax 的開發標準。</h2>
-        </div>
-        <div class="spec-grid">
-          <div class="spec-item">
-            <h4>核心引擎</h4>
-            <p>採用非同步 Python 框架 (FastAPI)，確保在高負載數據處理下依然維持極低的延遲與高擴展性。</p>
-          </div>
-          <div class="spec-item">
-            <h4>邏輯標準化</h4>
-            <p>嚴謹的邏輯單元測試，確保自動化流程在各種邊界條件下皆能穩定運行，將錯誤率降至最低。</p>
-          </div>
-          <div class="spec-item">
-            <h4>效能表現</h4>
-            <p>網頁加載速度優化至 1s 內，並以 Core Web Vitals 作為體驗與工程品質基準。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="process-section reveal">
-        <div class="section-heading">
-          <p class="eyebrow">工作流程</p>
-          <h2>從想法到交付的極簡路徑。</h2>
-        </div>
-        <div class="process-steps list-mode">
-          <div class="list-row reveal">
-            <div class="list-num">01</div>
-            <div class="list-content">
-              <h4>需求同步</h4>
-              <p>快速溝通核心邏輯，鎖定必要功能與交付優先序。</p>
-            </div>
-            <div class="list-meta">
-              <p class="pkg-lead-time">第一階段</p>
-            </div>
-          </div>
-          <div class="list-row reveal">
-            <div class="list-num">02</div>
-            <div class="list-content">
-              <h4>AI 協作原型</h4>
-              <p>3 天內產出可視化原型或最小可行流程，先驗證再擴充。</p>
-            </div>
-            <div class="list-meta">
-              <p class="pkg-lead-time">第二階段</p>
-            </div>
-          </div>
-          <div class="list-row reveal">
-            <div class="list-num">03</div>
-            <div class="list-content">
-              <h4>精準交付</h4>
-              <p>優化、測試並完成部署，將複雜度留在系統內部而不是客戶流程裡。</p>
-            </div>
-            <div class="list-meta">
-              <p class="pkg-lead-time">第三階段</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="results-section">
-        <div class="section-heading">
-          <p class="eyebrow">成果數據</p>
-          <h2>效率不是口號，而是每一個交付節點都可被感知的價值。</h2>
-        </div>
-        <div class="stats-grid">
-          <article class="stat-card panel">
-            <strong>3x+</strong>
-            <p>平均可壓縮開發時程</p>
-          </article>
-          <article class="stat-card panel">
-            <strong>Lean</strong>
-            <p>優先構建必要功能與關鍵體驗</p>
-          </article>
-          <article class="stat-card panel">
-            <strong>Remote</strong>
-            <p>支援全球遠端協作與快速迭代</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="cases-section" id="cases">
-        <div class="section-heading">
-          <p class="eyebrow">精選案例</p>
-          <h2>以模組化思維與 AI 協作流程，交付更乾淨、更快、更有效率的成果。</h2>
-        </div>
-        <div class="case-list list-mode">
-          <article class="list-row reveal">
-            <div class="list-num">01</div>
-            <div class="list-content">
-              <h3>高併發非同步 API 系統架構</h3>
-              <p>基於 FastAPI 構建，具備即時數據處理與高吞吐能力，將原本臃腫的微服務整併為輕量極速的單體架構，大幅降低伺服器負載。</p>
-            </div>
-            <div class="list-meta">
-              <p class="case-id">[VS-API-01]</p>
-              <button class="view-detail" type="button" onclick="openCase('api01')">查看案例</button>
-            </div>
-          </article>
-          <article class="list-row reveal">
-            <div class="list-num">02</div>
-            <div class="list-content">
-              <h3>Python 自動化流程與 AI 代理整合實績</h3>
-              <p>串接 API、腳本與代理流程，將重複性營運工作自動化，縮短人工操作鏈路，讓決策與執行速度同步提升。</p>
-            </div>
-            <div class="list-meta">
-              <p class="case-id">[VS-Auto-01]</p>
-              <button class="view-detail" type="button" onclick="openCase('auto01')">查看案例</button>
-            </div>
-          </article>
-          <article class="list-row reveal">
-            <div class="list-num">03</div>
-            <div class="list-content">
-              <h3>全端數位產品：高質感網站與 App</h3>
-              <p>採用 Next.js 與跨平台技術，為客戶打造極致流暢的企業級應用。兼顧視覺美學與後端擴展性，完美呈現品牌價值與核心功能。</p>
-            </div>
-            <div class="list-meta">
-              <p class="case-id">[VS-WebApp-01]</p>
-              <button class="view-detail" type="button" onclick="openCase('webapp01')">查看案例</button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="faq-section reveal">
-        <div class="section-heading">
-          <p class="eyebrow">常見問題</p>
-          <h2>常見問題</h2>
-        </div>
-        <div class="faq-list">
-          <div class="faq-item panel">
-            <h4>為什麼 Vibe Coding 比較快？</h4>
-            <p>傳統開發需要大量的人工語法編寫與除錯。Vibe Coding 透過 AI 直接生成架構與模板，將開發者的精力集中在「核心業務邏輯」與「架構決策」上，進而大幅壓縮開發時間。</p>
-          </div>
-          <div class="faq-item panel">
-            <h4>如何保證代碼品質？</h4>
-            <p>所有由 AI 生成的代碼皆會經過嚴格的人工審核，並配備自動化測試流程，確保產出符合現代工程標準與安全性要求。</p>
-          </div>
-          <div class="faq-item panel">
-            <h4>支援遠端協作嗎？</h4>
-            <p>當然！我們強烈依賴非同步且高效的遠端工作流，透過 Discord 或 Slack 進行即時且精準的溝通，確保雙方在最短時間內達成共識。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-section" id="contact">
-        <div class="contact-copy">
-          <p class="eyebrow">聯繫我們</p>
-          <h2>如果你想用更短時間做出更有價值的產品，我們可以一起開始。</h2>
-          <p>
-            適合正在規劃網站設計、App 開發、自動化系統，或想用更高效率方式重構數位產品的團隊與個人。
-          </p>
-          <p>
-            如需商務洽談，請直接透過 Instagram 私訊我們，或透過 Discord 聯繫。
-          </p>
-        </div>
-        <div class="contact-panel panel">
-          <p><strong>Instagram</strong><br><a href="https://www.instagram.com/vibe._syntax/" target="_blank" rel="noopener">@vibe._syntax</a></p>
-          <p><strong>操作地點</strong><br>遠端 / 台中（支援全球遠端協作）</p>
-        </div>
-      </section>
-    </main>
-  </div>
-  <dialog id="caseOverlay" class="overlay">
-    <div class="overlay-content panel">
-      <button class="overlay-close" type="button" onclick="closeCase()">關閉</button>
-      <div id="caseDetailRender"></div>
     </div>
-  </dialog>
-  <script>
 
-
-    const caseDetails = {
-      api01: {
-        id: '[VS-API-01]',
-        title: '高併發非同步 API 系統架構',
-        summary: '基於 FastAPI 構建，具備即時數據處理與高吞吐能力，將原本臃腫的微服務整併為輕量極速的單體架構。',
-        stack: ['FastAPI', 'Python', 'Redis', 'Docker'],
-        notes: [
-          '採用非同步架構，將原本的請求回應時間從 800ms 降至 50ms。',
-          '整合 Redis 快取機制，並透過 Pydantic 實現嚴格的數據驗證。',
-          '容器化部署，確保在不同環境下皆能保持一致的運行效能。'
-        ]
-      },
-      auto01: {
-        id: '[VS-Auto-01]',
-        title: 'Python 自動化流程與 AI 代理整合實績',
-        summary: '將 API、腳本與代理協作流程整合成低摩擦的執行管線，減少人工作業與切換成本。',
-        stack: ['Python', 'FastAPI', 'Agents', 'Scheduler'],
-        notes: [
-          '把重複性資料整理與通知流程自動化，縮短營運手動處理時間。',
-          '利用代理分工處理分析、摘要與回報，讓交付更穩定。',
-          '保留人工審核節點，在效率與可控性之間取得平衡。'
-        ]
-      },
-      webapp01: {
-        id: '[VS-WebApp-01]',
-        title: '高質感品牌網站與 App 開發',
-        summary: '以極簡結構與高對比排版，建立企業級應用第一屏的說服力與流暢的跨平台體驗。',
-        stack: ['Next.js', 'React Native', 'Design Tokens', 'Responsive UI'],
-        notes: [
-          '首頁訊息層級重新排序，讓使用者在 3 秒內理解服務價值與 CTA。',
-          '透過沉穩主調搭配微動畫互動，兼顧專業感與未來氣質。',
-          '深度優化效能指標，確保 Web 與 App 雙端載入速度與滑順度達到極致。'
-        ]
-      }
-    };
-
-
-
-    function renderCase(detail) {
-      const container = document.getElementById('caseDetailRender');
-      container.innerHTML = `
-        <p class="overlay-id">${detail.id}</p>
-        <h3>${detail.title}</h3>
-        <p class="overlay-summary">${detail.summary}</p>
-        <div class="overlay-stack">
-          ${detail.stack.map((item) => `<span>${item}</span>`).join('')}
-        </div>
-        <div class="overlay-notes">
-          ${detail.notes.map((item) => `<p>${item}</p>`).join('')}
-        </div>
-      `;
-    }
-
-    function openCase(key) {
-      const detail = caseDetails[key];
-      const overlay = document.getElementById('caseOverlay');
-      if (!detail || !overlay) return;
-      renderCase(detail);
-      overlay.showModal();
-    }
-
-    function closeCase() {
-      const overlay = document.getElementById('caseOverlay');
-      if (overlay && overlay.open) {
-        overlay.close();
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const daysRange = document.getElementById('daysRange');
-      const daysVal = document.getElementById('daysVal');
-      const vsBar = document.getElementById('vsBar');
-      const saveTag = document.getElementById('saveTag');
-      const overlay = document.getElementById('caseOverlay');
-
-      // 1. 為列表項目自動分配延遲 (Stagger effect)
-      const staggerContainers = ['.packages-grid', '.metrics-grid', '.case-list', '.stats-grid', '.process-steps', '.faq-list'];
-      staggerContainers.forEach(containerSelector => {
-        const container = document.querySelector(containerSelector);
-        if (container) {
-          Array.from(container.children).forEach((child, i) => {
-            child.style.setProperty('--delay', i + 1);
-            child.classList.add('reveal');
-          });
+    <script>
+        function updateScale() {
+            const app = document.getElementById('app');
+            const scaleX = window.innerWidth / 1080;
+            const scaleY = window.innerHeight / 1920;
+            const scale = Math.min(scaleX, scaleY);
+            app.style.transform = \`scale(\${scale})\`;
+            app.style.left = \`\${(window.innerWidth - 1080 * scale) / 2}px\`;
+            app.style.top = \`\${(window.innerHeight - 1920 * scale) / 2}px\`;
         }
-      });
-
-      // 2. 強化版滾動監聽 (Intersection Observer)
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
-
-      document.querySelectorAll('.panel, .section-heading, .signal-strip, .tech-marquee, .contact-copy').forEach((element) => {
-        element.classList.add('reveal');
-      });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-      const updateEfficiency = () => {
-        const days = Number(daysRange.value);
-        const reducedDays = Math.max(3, Math.round(days * 0.3));
-        const percentage = Math.round((reducedDays / days) * 100);
-        const saved = 100 - percentage;
-        daysVal.textContent = `${days} Days`;
-        vsBar.style.width = `${percentage}%`;
-        saveTag.textContent = `節省約 ${saved}% 時間 | 預估 ${reducedDays} Days 交付`;
-      };
-
-      if (daysRange && daysVal && vsBar && saveTag) {
-        daysRange.addEventListener('input', updateEfficiency);
-        updateEfficiency();
-      }
-
-      if (overlay) {
-        overlay.addEventListener('click', (event) => {
-          const bounds = overlay.querySelector('.overlay-content').getBoundingClientRect();
-          const inDialog =
-            event.clientX >= bounds.left &&
-            event.clientX <= bounds.right &&
-            event.clientY >= bounds.top &&
-            event.clientY <= bounds.bottom;
-          if (!inDialog) {
-            closeCase();
-          }
-        });
-      }
-    });
-
-    let tickingMouse = false;
-    document.addEventListener('mousemove', (event) => {
-      if (!tickingMouse) {
-        window.requestAnimationFrame(() => {
-          const x = (event.clientX / window.innerWidth) * 100;
-          const y = (event.clientY / window.innerHeight) * 100;
-          document.body.style.setProperty('--mouse-x', `${x}%`);
-          document.body.style.setProperty('--mouse-y', `${y}%`);
-          tickingMouse = false;
-        });
-        tickingMouse = true;
-      }
-    });
-
-    let tickingScroll = false;
-    document.addEventListener('scroll', () => {
-      if (!tickingScroll) {
-        window.requestAnimationFrame(() => {
-          document.body.style.setProperty('--scroll-y', window.scrollY);
-          tickingScroll = false;
-        });
-        tickingScroll = true;
-      }
-    });
-
-
-
-    // --- Click Ripple Effect ---
-    document.addEventListener('click', (e) => {
-      const ripple = document.createElement('div');
-      ripple.className = 'click-ripple';
-      ripple.style.left = `${e.clientX}px`;
-      ripple.style.top = `${e.clientY}px`;
-      document.body.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-    });
-
-  </script>
+        window.addEventListener('resize', updateScale);
+        updateScale();
+    </script>
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
